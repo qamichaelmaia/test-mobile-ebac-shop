@@ -8,8 +8,9 @@ exports.config = {
     path: '/wd/hub',
 
 
+
     specs: [
-        './test/specs/**/*.spec.js'
+        './test/specs/**/*.js'
     ],
 
     maxInstances: 10,
@@ -18,10 +19,9 @@ exports.config = {
     capabilities: [{
         "platformName": "Android",
         "appium:platformVersion": "9.0",
-        "appium:deviceName": "Loja-Ebac",
+        "appium:deviceName": "ebac-mobile",
         "appium:automationName": "UiAutomator2",
-        "appium:appActivity": "ui.main.MainActivity",
-        "appium:appMainActivity": "com.woocommerce.android.ui.login.LoginActivity",
-        "appium:newCommandTimeout": "240"
+        "appium:app": "C:\\Users\\conta\\Desktop\\TEST-MOBILE-EBAC-SHOP\\app\\android\\loja-ebac.apk",
+        "appium:appWaitActivity": ".MainActivity"
     }]
 }
