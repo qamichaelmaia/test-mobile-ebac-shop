@@ -24,7 +24,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        '.test/specs/**/*.js'
+        '.test/specs/**/*.spec.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -59,7 +59,7 @@ exports.config = {
         "appium:automationName": "UiAutomator2",
         "appium:appWaitActivity": ".MainActivity",
         "app": join(process.cwd(), './app/loja-ebac.apk'),
-        "appWaitActivity": com.woocommerce.android.ui.main.MainActivity
+        "appWaitActivity": 'com.woocommerce.android.ui.main.MainActivity'
       }],
 
     //
@@ -95,6 +95,7 @@ exports.config = {
     // gets prepended directly.
     baseUrl: 'http://localhost',
     port: 4723,
+    path: '/wd/hub/',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
