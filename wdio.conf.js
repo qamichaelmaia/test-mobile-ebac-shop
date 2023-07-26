@@ -57,9 +57,7 @@ exports.config = {
         "appium:platformVersion": "9.0",
         "appium:deviceName": "ebac-mobile",
         "appium:automationName": "UiAutomator2",
-        "appium:appWaitActivity": ".MainActivity",
-        "app": join(process.cwd(), './app/loja-ebac.apk'),
-        "appWaitActivity": 'com.woocommerce.android.ui.main.MainActivity'
+        "appium:appWaitActivity": "com.woocommerce.android.ui.login.LoginActivity"
       }],
 
     //
