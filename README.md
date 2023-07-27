@@ -1,3 +1,10 @@
-# test-mobile-ebac-shop
+# Test mobile EBAC - Shop
 
-Teste de automação Android
+Login and confirmation testing scenario for user access with Woocomerce platform management.
+
+Android Emulator
+Appium
+Appium Inspector
+Wdio
+Visual Studio Code
+javascript
