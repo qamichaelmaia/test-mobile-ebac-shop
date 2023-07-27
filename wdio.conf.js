@@ -57,6 +57,7 @@ exports.config = {
         "appium:platformVersion": "9.0",
         "appium:deviceName": "ebac-mobile",
         "appium:automationName": "UiAutomator2",
+        "appium:app": join(process.cwd(), './app/loja-ebac.apk'),
         "appium:appWaitActivity": "com.woocommerce.android.ui.login.LoginActivity"
       }],
 
@@ -96,7 +97,7 @@ exports.config = {
     path: '/wd/hub/',
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 10000,
+    waitforTimeout: 20000,
     //
     // Default timeout in milliseconds for request
     // if browser driver or grid doesn't send response
@@ -139,7 +140,7 @@ exports.config = {
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
-        timeout: 60000
+        timeout: 300000
     },
     //
     // =====
