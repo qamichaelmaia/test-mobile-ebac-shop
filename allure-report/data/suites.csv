@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Aug 03 10:54:52 BRT 2023","Thu Aug 03 10:55:22 BRT 2023","29275","","Access Admin Panel","","","","shoud login with valid credentials",""

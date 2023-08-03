@@ -1,4 +1,6 @@
-const {join} = require('path')
+const { join } = require('path')
+const allure = require('allure-commandline');
+
 
 exports.config = {
     //
@@ -59,7 +61,7 @@ exports.config = {
         "appium:automationName": "UiAutomator2",
         "appium:app": join(process.cwd(), './app/loja-ebac.apk'),
         "appium:appWaitActivity": "com.woocommerce.android.ui.login.LoginActivity"
-      }],
+    }],
 
     //
     // ===================
@@ -132,9 +134,42 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec'],
+    reporters: ['spec',
+        ['allure', {
+            outputDir: 'allure-results',
+            disableWebdriverStepsReporting: true,
+            disableWebdriverScreenshotsReporting: true,
+        }]
 
-    
+    ],
+
+    onComplete: function () {
+        const reportError = new Error('Could not generate Allure report')
+        const generation = allure(['generate', 'allure-results', '--clean'])
+        return new Promise((resolve, reject) => {
+            const generationTimeout = setTimeout(
+                () => reject(reportError),
+                5000)
+
+            generation.on('exit', function (exitCode) {
+                clearTimeout(generationTimeout)
+
+                if (exitCode !== 0) {
+                    return reject(reportError)
+                }
+
+                console.log('Allure report successfully generated')
+                resolve()
+            })
+        })
+    },
+
+    afterTest: async function (test, context, { error, result, duration, passed, retries }) {
+        await driver.takeScreenshot();
+
+    },
+
+
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/

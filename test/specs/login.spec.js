@@ -3,7 +3,7 @@ const loginScreen = require("../screens/login.screen");
 const myStoreScreen = require("../screens/myStore.screen");
 
 
-let urlLoja = 'http://lojaebac.ebaconline.art.br/'
+let urlLoja = 'http://lojaebac.ebaconline.art.br/'/// Adicionar url da loja
 let usuario = 'gerente'
 let senha = 'GD*peToHNJ1#c$sgk08EaYJQ'
 
